@@ -4,6 +4,8 @@
     <img class="avatarMask" src="{{ .Site.BaseURL }}/img/{{ .Site.Params.avatar }}">
     <a href="{{ .Site.BaseURL }}"><img src="{{ .Site.BaseURL }}/img/avatar-border.svg"></a>
   </div>
+  {{ if .IsHome }}
   <!-- author -->
   <h2><a class="author" href="{{ .Site.BaseURL }}">{{ .Site.Params.Author }}</a></h2>
+  {{ end }}
 </header>
