@@ -6,7 +6,8 @@
   <p class="date">{{ .Date.Format $singlePageDateFormat }}</p>
   {{ end }}
    <!-- tags -->
-   <div id="tags">
+  {{ if .Param "tags" }}
+  <div id="tags">
     <ul>
       {{ range .Param "tags" }}
         {{ $name := . }}
@@ -16,6 +17,7 @@
       {{ end }}
     </ul>
   </div>
+  {{ end }}
   <h1>{{ .Title }}</h1>
   <!-- content -->
   <div id="contentBody">
