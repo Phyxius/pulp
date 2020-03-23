@@ -16,8 +16,7 @@
   {{ $style := resources.Get "css/style.css" }}
   {{ $markdown := resources.Get "css/markdown.css" }}
   {{ $syntaxHighlight := resources.Get "css/syntax-highlight.css" }}
-  {{ $syntaxHighlightDark := resources.Get "css/syntax-highlight-dark.css" }}
-  {{ $css := slice $style $markdown $syntaxHighlight $syntaxHighlightDark | resources.Concat "style.css" | resources.Minify | resources.Fingerprint }}
+  {{ $css := slice $style $markdown $syntaxHighlight | resources.Concat "style.css" | resources.Minify | resources.Fingerprint }}
   <link rel="stylesheet" href="{{ $css.Permalink }}" integrity="{{ $css.Data.Integrity }}">
   {{ $styleDark := resources.Get "css/style-dark.css" }}
   {{ $markdownDark := resources.Get "css/markdown-dark.css" }}
