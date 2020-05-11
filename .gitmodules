@@ -1,0 +1,3 @@
+[submodule "assets/js/dark-mode-toggle"]
+	path = assets/js/dark-mode-toggle
+	url = https://github.com/GoogleChromeLabs/dark-mode-toggle.git
