@@ -16,11 +16,11 @@
   {{ $style := resources.Get "css/style.css" }}
   {{ $markdown := resources.Get "css/markdown.css" }}
   {{ $syntaxHighlight := resources.Get "css/syntax-highlight.css" }}
-  {{ $css := slice $style $markdown $syntaxHighlight | resources.Concat "style.css" | resources.Minify | resources.Fingerprint }}
+  {{ $css := slice $style $markdown $syntaxHighlight | resources.Concat "css/style.css" | resources.Minify | resources.Fingerprint }}
   <link rel="stylesheet" href="{{ $css.Permalink }}" integrity="{{ $css.Data.Integrity }}">
   {{ $styleDark := resources.Get "css/style-dark.css" }}
   {{ $markdownDark := resources.Get "css/markdown-dark.css" }}
-  {{ $cssDark := slice $styleDark $markdownDark | resources.Concat "style-dark.css" | resources.Minify | resources.Fingerprint }}
+  {{ $cssDark := slice $styleDark $markdownDark | resources.Concat "css/style-dark.css" | resources.Minify | resources.Fingerprint }}
   <link rel="stylesheet" href="{{ $cssDark.Permalink }}" media="(prefers-color-scheme: dark)" integrity="{{ $cssDark.Data.Integrity }}">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.2/css/all.css" integrity="sha384-rtJEYb85SiYWgfpCr0jn174XgJTn4rptSOQsMroFBPQSGLdOC5IbubP6lJ35qoM9" crossorigin="anonymous">
   {{ $darkModeToggle := resources.Get "js/dark-mode-toggle/src/dark-mode-toggle.mjs" }}
