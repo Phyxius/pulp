@@ -23,6 +23,7 @@
   {{ $cssDark := slice $styleDark $markdownDark | resources.Concat "style-dark.css" | resources.Minify | resources.Fingerprint }}
   <link rel="stylesheet" href="{{ $cssDark.Permalink }}" media="(prefers-color-scheme: dark)" integrity="{{ $cssDark.Data.Integrity }}">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.2/css/all.css" integrity="sha384-rtJEYb85SiYWgfpCr0jn174XgJTn4rptSOQsMroFBPQSGLdOC5IbubP6lJ35qoM9" crossorigin="anonymous">
+  <script type="module" src="https://unpkg.com/dark-mode-toggle"></script>
   <!-- custom css -->
   {{ range .Site.Params.custom_css }}
   <link rel="stylesheet" href="{{ . }}">
