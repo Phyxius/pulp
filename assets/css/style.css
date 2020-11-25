@@ -76,7 +76,7 @@ footer {
 
 #profile {
   max-width: 600px;
-  /* min-width: 300px; */
+  min-width: 00px;
 }
 
 nav ul {
@@ -84,6 +84,7 @@ nav ul {
   justify-content: center;
   padding: 0;
   list-style: none;
+  flex-wrap: wrap;
 }
 
 nav li {
