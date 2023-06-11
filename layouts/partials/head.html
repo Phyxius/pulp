@@ -10,7 +10,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="{{ .Site.Params.Author }}" />
-  <link rel="shortcut icon" type="image/x-icon" href="/img/{{ .Site.Params.favicon }}">
+  {{with .Site.Params.favicon}}
+    {{ $favicon := resources.Get .}}
+    {{ range slice "32x32" "128x128" "180x180" "192x192"}}
+      {{ $resizedIcon := $favicon.Resize .}}
+      <link rel="shortcut icon" href="{{$resizedIcon.Permalink}}">
+    {{end}}
+  {{ end }}
 
   <!-- css -->
   {{ $style := resources.Get "css/style.css" }}
@@ -33,9 +39,7 @@
 
   {{/* NOTE: These Hugo Internal Templates can be found starting at https://github.com/gohugoio/hugo/tree/master/tpl/tplimpl/embedded/templates */}}
   {{- template "_internal/opengraph.html" . -}}
-  {{- template "_internal/google_news.html" . -}}
   {{- template "_internal/schema.html" . -}}
-  <!-- {{- template "_internal/twitter_cards.html" . -}} -->
   {{- partial "twitter_cards.html" . -}}
 
   <!-- Polyfill for old browsers -->
