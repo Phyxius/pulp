@@ -14,7 +14,7 @@
     {{ $favicon := resources.Get .}}
     {{ range slice "32x32" "128x128" "180x180" "192x192"}}
       {{ $resizedIcon := $favicon.Resize .}}
-      <link rel="shortcut icon" href="{{$resizedIcon.Permalink}}">
+      <link rel="shortcut icon" href="{{$resizedIcon.Permalink}}" sizes="{{.}}">
     {{end}}
   {{ end }}
 
