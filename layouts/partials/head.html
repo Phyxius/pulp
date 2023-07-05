@@ -28,7 +28,7 @@
   {{ $markdownDark := resources.Get "css/markdown-dark.css" }}
   {{ $cssDark := slice $styleDark $markdownDark | resources.Concat "css/style-dark.css" | resources.Minify | resources.Fingerprint }}
   <link rel="stylesheet" href="{{ $cssDark.Permalink }}" media="(prefers-color-scheme: dark)" integrity="{{ $cssDark.Data.Integrity }}">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.2/css/all.css" integrity="sha384-rtJEYb85SiYWgfpCr0jn174XgJTn4rptSOQsMroFBPQSGLdOC5IbubP6lJ35qoM9" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.4.0/css/all.css" integrity="sha384-iw3OoTErCYJJB9mCa8LNS2hbsQ7M3C0EpIsO/H5+EGAkPGc6rk+V8i04oW/K5xq0" crossorigin="anonymous">
   {{ $darkModeToggle := resources.Get "js/dark-mode-toggle/src/dark-mode-toggle.mjs" }}
   {{ $jsBundle := slice $darkModeToggle | resources.Concat "js/jsModules.mjs" | resources.Minify | resources.Fingerprint }}
   <script type="module" src="{{ $jsBundle.Permalink }}" integrity="{{ $jsBundle.Data.Integrity }}"></script>
