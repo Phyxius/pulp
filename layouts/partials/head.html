@@ -1,6 +1,6 @@
 <head>
   <title>
-      {{ if eq .Title .Site.Title }}
+      {{ if or (eq .Title .Site.Title) (eq .Title "") }}
           {{ .Site.Title }}
       {{ else }}
           {{ .Title }} - {{ .Site.Title }}
